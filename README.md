@@ -55,10 +55,7 @@ TYLimitedTextField  TYLimitedTextView具体代码请参考demo
  ```
      //设置允许输入的最大长度
     self.textView.maxLength = 200;
-    
-    //设置代理方法
-    self.textView.realDelegate = self;
-    
+
     self.textView.backgroundColor = [UIColor cyanColor];
     
     //设置placeholder
@@ -67,6 +64,9 @@ TYLimitedTextField  TYLimitedTextView具体代码请参考demo
 
  代理方法可用来监听textView输入，return endEditing事件
 ```
+    //设置代理方法
+self.textView.realDelegate = self;
+
 -(BOOL)limitedTextViewShouldReturn:(UITextView *)textView{
     NSLog(@"点击了return");
     return NO;
