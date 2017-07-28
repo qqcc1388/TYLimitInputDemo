@@ -16,6 +16,8 @@
 		2AE397331F2AD80400F15D70 /* TYLimitInputDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE397321F2AD80400F15D70 /* TYLimitInputDemoTests.m */; };
 		2AE3973E1F2AD80400F15D70 /* TYLimitInputDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE3973D1F2AD80400F15D70 /* TYLimitInputDemoUITests.m */; };
 		2AE3974D1F2AD85600F15D70 /* TYLimitedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE3974C1F2AD85600F15D70 /* TYLimitedTextField.m */; };
+		2AE3975A1F2B49AD00F15D70 /* TYLimitedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE397571F2B49AD00F15D70 /* TYLimitedTextView.m */; };
+		2AE3975B1F2B49AD00F15D70 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE397591F2B49AD00F15D70 /* UITextView+Placeholder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		2AE3973F1F2AD80400F15D70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AE3974B1F2AD85600F15D70 /* TYLimitedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLimitedTextField.h; sourceTree = "<group>"; };
 		2AE3974C1F2AD85600F15D70 /* TYLimitedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYLimitedTextField.m; sourceTree = "<group>"; };
+		2AE397561F2B49AD00F15D70 /* TYLimitedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYLimitedTextView.h; sourceTree = "<group>"; };
+		2AE397571F2B49AD00F15D70 /* TYLimitedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYLimitedTextView.m; sourceTree = "<group>"; };
+		2AE397581F2B49AD00F15D70 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
+		2AE397591F2B49AD00F15D70 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,10 @@
 			children = (
 				2AE3974B1F2AD85600F15D70 /* TYLimitedTextField.h */,
 				2AE3974C1F2AD85600F15D70 /* TYLimitedTextField.m */,
+				2AE397561F2B49AD00F15D70 /* TYLimitedTextView.h */,
+				2AE397571F2B49AD00F15D70 /* TYLimitedTextView.m */,
+				2AE397581F2B49AD00F15D70 /* UITextView+Placeholder.h */,
+				2AE397591F2B49AD00F15D70 /* UITextView+Placeholder.m */,
 				2AE3971B1F2AD80400F15D70 /* AppDelegate.h */,
 				2AE3971C1F2AD80400F15D70 /* AppDelegate.m */,
 				2AE3971E1F2AD80400F15D70 /* ViewController.h */,
@@ -280,7 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AE397201F2AD80400F15D70 /* ViewController.m in Sources */,
+				2AE3975B1F2B49AD00F15D70 /* UITextView+Placeholder.m in Sources */,
 				2AE3974D1F2AD85600F15D70 /* TYLimitedTextField.m in Sources */,
+				2AE3975A1F2B49AD00F15D70 /* TYLimitedTextView.m in Sources */,
 				2AE3971D1F2AD80400F15D70 /* AppDelegate.m in Sources */,
 				2AE3971A1F2AD80400F15D70 /* main.m in Sources */,
 			);
@@ -518,6 +530,7 @@
 				2AE397441F2AD80400F15D70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2AE397451F2AD80400F15D70 /* Build configuration list for PBXNativeTarget "TYLimitInputDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +539,7 @@
 				2AE397471F2AD80400F15D70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2AE397481F2AD80400F15D70 /* Build configuration list for PBXNativeTarget "TYLimitInputDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +548,7 @@
 				2AE3974A1F2AD80400F15D70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
