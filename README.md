@@ -1,4 +1,5 @@
-    项目中各个地方都会用到TextField，textField的输入也会有各种需求，各种限制，每次用到的时候要重写一遍这些限制，导致各种垃圾代码，各种重复，有一天，我终于看不下去了，于是把textField的输入限制封装成在了一起，方便后续开发使用，代码量也减少了很多，这里把封装的View提供出现，有需要的可以参考一下。demo下载地址：
+    ### 项目中各个地方都会用到textField，textField的输入也会有各种需求，各种限制，每次用到的时候要重写一遍这些限制，导致各种垃圾代码，各种重复，有一天，我终于看不下去了，于是把textField的输入限制封装成在了一起，方便后续开发使用，代码量也减少了很多，这里把封装的View提供出来，有需要的可以参考一下。
+
     TYLimitedTextField能够快速实现以下功能(支持xib):
     1. 限制输入的字符(数字，字母，数字+字母，email等)
     2. 提供一个可以监听textField实时改变的方法，不需要自己去写观察者
@@ -281,8 +282,8 @@ typedef NS_ENUM(NSUInteger, TYLimitedTextFieldType) {
         NSLog(@"实时监听文字改变%@",textField.text);
     }
 ```
-
-使用TYLimitedTextField一定要注意：TYLimitedTextField已经将系统的TextField部分代理方法拓展出来了，所有如果你需要使用TYLimitedTextField回调功能，请不要使用delegate而使用realDelegate，否则会出现冲突也就是self.delegate = self 的尴尬。如果拓展出来的方法不足以你使用，自己自行拓展。
+ 
+** 使用TYLimitedTextField一定要注意：TYLimitedTextField已经将系统的TextField部分代理方法拓展出来了，所有如果你需要使用TYLimitedTextField回调功能，请不要使用delegate而使用realDelegate，否则会出现冲突也就是self.delegate = self 的尴尬。如果拓展出来的方法不足以你使用，自己自行拓展。 **
 
 
     
