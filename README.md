@@ -7,6 +7,7 @@
     3. 限制输入文字的最大长度
     4. 限制textField距离leftPading rightPading
     5. 更方便快捷的设置leftView rightView
+    6. 设置textFiled placeholderColor
 
     TYLimitedTextView能够快速实现功能(支持xib)
     1. placeholoder功能实现
@@ -28,6 +29,10 @@ TYLimitedTextField  TYLimitedTextView具体代码请参考demo
     //设置leftPading rightPading
     self.textField.leftPadding = 10;
     self.textField.rightPadding = 10;
+
+    //设置placehoder  注意顺序性 先设置文字再设置颜色
+    self.textField.placeholder = @"请开始你的表演";
+    self.textField.placeholderColor = [UIColor redColor];
     
     //设置leftView rightView
     UIButton *item = [UIButton buttonWithType:UIButtonTypeContactAdd];
