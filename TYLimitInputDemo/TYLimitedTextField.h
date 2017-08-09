@@ -15,6 +15,7 @@ typedef NS_ENUM(NSUInteger, TYLimitedTextFieldType) {
     TYLimitedTextFieldTypeNumber,           //数字
     TYLimitedTextFieldTypeNumberOrLetter,   //数字和字母
     TYLimitedTextFieldTypeEmail,            //数字 字母 和 特定字符( '.'  '@')
+    TYLimitedTextFieldTypePassword,         //数字 字母 下划线
 };
 
 
@@ -42,7 +43,7 @@ typedef NS_ENUM(NSUInteger, TYLimitedTextFieldType) {
 
 /**
  输入内容改变调用(实时变化)
-
+ 
  @param textField TYLimitedTextField
  */
 -(void)limitedTextFieldDidChange:(UITextField *)textField;
@@ -76,6 +77,11 @@ typedef NS_ENUM(NSUInteger, TYLimitedTextFieldType) {
  距离右边的间距 默认 0
  */
 @property (nonatomic,assign) CGFloat rightPadding;
+
+/**
+ 给placeHolder设置颜色
+ */
+@property (nonatomic,strong) UIColor *placeholderColor;
 
 /**
  textField -> leftView

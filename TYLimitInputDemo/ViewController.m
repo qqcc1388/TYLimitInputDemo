@@ -56,6 +56,10 @@
     self.textField.leftPadding = 10;
     self.textField.rightPadding = 10;
     
+    //设置placehoder  注意顺序性 先设置文字再设置颜色
+    self.textField.placeholder = @"请开始你的表演";
+    self.textField.placeholderColor = [UIColor redColor];
+    
     //设置leftView rightView
     UIButton *item = [UIButton buttonWithType:UIButtonTypeContactAdd];
     self.textField.customLeftView = item;

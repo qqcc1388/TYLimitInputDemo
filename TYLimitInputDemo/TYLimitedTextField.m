@@ -11,6 +11,7 @@
 //字母+数字
 #define kLetterNum  @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 #define kEmail      @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.@"
+#define kPassword   @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
 
 @interface TYLimitedTextField () <UITextFieldDelegate>
 
@@ -43,8 +44,8 @@
 -(void)initialize{
     
     //设置默认值
-    self.rightPadding = 0;
-    self.leftPadding = 0;
+    self.rightPadding = 10;
+    self.leftPadding = 10;
     self.limitedType = TYLimitedTextFieldTypeNomal;
     
     //设置边框和颜色
@@ -81,7 +82,7 @@
     if ((textField.text.length >= self.maxLength) && self.maxLength && ![string isEqualToString:@""]) {  return NO;}
     
     if (!self.filter) {  return YES;}
-
+    
     //限制条件
     NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:self.filter] invertedSet];
     NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""]; //按cs分离出数组,数组按@""分离出字符串
@@ -115,6 +116,8 @@
             self.filter = kLetterNum;
         }else if(limitedType == TYLimitedTextFieldTypeEmail){  //email
             self.filter = kEmail;
+        }else if(limitedType == TYLimitedTextFieldTypePassword){ //密码 数字 字母 下划线组成
+            self.filter = kPassword;
         }
     }
 }
@@ -127,6 +130,11 @@
 -(void)setRightPadding:(CGFloat)rightPadding{
     _rightPadding = rightPadding;
     [self setValue:@(rightPadding) forKey:@"paddingRight"];
+}
+
+-(void)setPlaceholderColor:(UIColor *)placeholderColor{
+    _placeholderColor = placeholderColor;
+    [self setValue:_placeholderColor forKeyPath:@"_placeholderLabel.textColor"];
 }
 
 -(void)setCustomLeftView:(UIView *)customLeftView{
