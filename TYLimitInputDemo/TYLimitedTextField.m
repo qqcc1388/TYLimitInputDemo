@@ -149,4 +149,13 @@
     self.rightViewMode = UITextFieldViewModeAlways;
 }
 
+//iOS11之后placeholder设置偏移后placeholder位置没有变化
+-(CGRect)placeholderRectForBounds:(CGRect)bounds{
+    if (@available(iOS 11.0, *)) {
+        CGRect rect = {{bounds.origin.x+_leftPadding,bounds.origin.y},bounds.size};
+        return rect;
+    }
+    return  [super placeholderRectForBounds:bounds];
+}
+
 @end
