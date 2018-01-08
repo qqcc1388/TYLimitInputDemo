@@ -47,6 +47,7 @@
     self.rightPadding = 10;
     self.leftPadding = 10;
     self.limitedType = TYLimitedTextFieldTypeNomal;
+    self.textAlignment = NSTextAlignmentLeft;
     
     //设置边框和颜色
     self.layer.cornerRadius = 5;
@@ -94,6 +95,12 @@
 -(void)textFieldDidChange:(UITextField *)textField{
     if (_realDelegate && [_realDelegate respondsToSelector:@selector(limitedTextFieldDidChange:)]) {
         [_realDelegate limitedTextFieldDidChange:textField];
+    }
+    if(self.textFieldDidChange){
+        self.textFieldDidChange(textField.text);
+    }
+    if(self.textFieldDidChange){
+        self.textFieldDidChange(textField.text);
     }
 }
 
@@ -152,10 +159,20 @@
 //iOS11之后placeholder设置偏移后placeholder位置没有变化
 -(CGRect)placeholderRectForBounds:(CGRect)bounds{
     if (@available(iOS 11.0, *)) {
-        CGRect rect = {{bounds.origin.x+_leftPadding,bounds.origin.y},bounds.size};
+        //如果是左对齐 则+leftPadding
+        //右对齐      则-rightPadding
+        //中间对其    则pading设置为0
+        CGFloat padding = 0;
+        if(self.textAlignment == NSTextAlignmentRight){
+            padding = -_rightPadding;
+        }else if(self.textAlignment == NSTextAlignmentLeft){
+            padding = _leftPadding;
+        }
+        CGRect rect = {{bounds.origin.x+padding,bounds.origin.y},bounds.size};
         return rect;
     }
     return  [super placeholderRectForBounds:bounds];
 }
 
 @end
+

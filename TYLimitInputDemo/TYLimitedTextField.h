@@ -64,17 +64,22 @@ typedef NS_ENUM(NSUInteger, TYLimitedTextFieldType) {
 @property (nonatomic,assign) TYLimitedTextFieldType limitedType;
 
 /**
+ TYTextField内容发生改变block回调
+ */
+@property (nonatomic, copy) void (^textFieldDidChange)(NSString *text);
+
+/**
  textField允许输入的最大长度 默认 0不限制
  */
 @property (nonatomic,assign) NSInteger maxLength;
 
 /**
- 距离左边的间距  默认0
+ 距离左边的间距  默认10
  */
 @property (nonatomic,assign) CGFloat leftPadding;
 
 /**
- 距离右边的间距 默认 0
+ 距离右边的间距 默认 10
  */
 @property (nonatomic,assign) CGFloat rightPadding;
 
@@ -94,3 +99,4 @@ typedef NS_ENUM(NSUInteger, TYLimitedTextFieldType) {
 @property (nonatomic,strong) UIView *customRightView;
 
 @end
+
