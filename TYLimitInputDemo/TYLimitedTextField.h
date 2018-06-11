@@ -42,11 +42,26 @@ typedef NS_ENUM(NSUInteger, TYLimitedTextFieldType) {
 -(void)limitedTextFieldDidEndEditing:(UITextField *)textField;
 
 /**
+ 输入开始
+ 
+ @param textField TYLimitedTextField
+ */
+-(void)limitedTextFieldDidBeginEditing:(UITextField *)textField;
+
+/**
  输入内容改变调用(实时变化)
  
  @param textField TYLimitedTextField
  */
 -(void)limitedTextFieldDidChange:(UITextField *)textField;
+
+/**
+ 输入开始启动的时候调用
+ 
+ @param textField TYLimitedTextField
+ @return 是否允许编辑
+ */
+-(BOOL)limitedTextFieldShouldBeginEditing:(UITextField *)textField;
 
 @end
 
@@ -99,4 +114,3 @@ typedef NS_ENUM(NSUInteger, TYLimitedTextFieldType) {
 @property (nonatomic,strong) UIView *customRightView;
 
 @end
-

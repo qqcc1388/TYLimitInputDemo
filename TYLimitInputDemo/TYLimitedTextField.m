@@ -70,10 +70,23 @@
     return YES;
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    if (_realDelegate && [_realDelegate respondsToSelector:@selector(limitedTextFieldDidBeginEditing:)]) {
+        return [_realDelegate limitedTextFieldDidBeginEditing:textField];
+    }
+}
+
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     if (_realDelegate && [_realDelegate respondsToSelector:@selector(limitedTextFieldDidEndEditing:)]) {
         [_realDelegate limitedTextFieldDidEndEditing:textField];
     }
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if (_realDelegate && [_realDelegate respondsToSelector:@selector(limitedTextFieldShouldBeginEditing:)]) {
+        return [_realDelegate limitedTextFieldShouldBeginEditing:textField];
+    }
+    return YES;
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
@@ -169,10 +182,9 @@
             padding = _leftPadding;
         }
         CGRect rect = {{bounds.origin.x+padding,bounds.origin.y},bounds.size};
-        return rect;
+        return [super placeholderRectForBounds:rect];
     }
     return  [super placeholderRectForBounds:bounds];
 }
 
 @end
-
